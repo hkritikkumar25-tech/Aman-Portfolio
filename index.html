@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aman Raj Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header__bar">
+    <a class="brand" href="#home">Aman Raj Portfolio</a>
+    <nav id="navMenu" class="nav">
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#clients" class="nav__link">Clients</a>
+      <a href="#testimonials" class="nav__link">Testimonials</a>
+      <a href="#contact" class="btn btn--sm">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <!-- Theme toggle -->
+      <button id="themeToggle" class="toggle" aria-label="Toggle theme" title="Toggle theme">
+        <span class="icon icon--sun" aria-hidden="true">☀</span>
+        <span class="icon icon--moon" aria-hidden="true">🌙</span>
+      </button>
+      <!-- Mobile menu -->
+      <button id="burger" class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <video class="hero__video" src="assets/My%20work.mp4" autoplay muted loop playsinline></video>
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <h1 class="hero__title">Discover the Magical Showreel</h1>
+    <p class="hero__subtitle">Editing, Color and VFX for commercials, web series and films.</p>
+    <div class="hero__cta">
+      <button id="playReel" class="btn">Play Full Reel</button>
+      <a href="#work" class="btn btn--ghost">View Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container stats__grid">
+    <div class="stat">
+      <span class="stat__num" data-count="90">0</span>
+      <span class="stat__label">Commercial Spots</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="25">0</span>
+      <span class="stat__label">Brands</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="12">0</span>
+      <span class="stat__label">Web/Episodic</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="8">0</span>
+      <span class="stat__label">Years</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section__title">Services</h2>
+    <div class="cards">
+      <article class="card"><div class="ico ico--edit"></div><h3>Offline/Online Editing</h3><p>Story-first cutting for ads and narrative.</p></article>
+      <article class="card"><div class="ico ico--mograph"></div><h3>Motion Graphics</h3><p>Titles, supers and product animations.</p></article>
+      <article class="card"><div class="ico ico--sound"></div><h3>Sound Design</h3><p>Edit, design and basic mix.</p></article>
+      <article class="card"><div class="ico ico--vfx"></div><h3>VFX</h3><p>Cleanups, comps and replacements.</p></article>
+      <article class="card"><div class="ico ico--color"></div><h3>Color Grading</h3><p>Looks and broadcast safe finish.</p></article>
+      <article class="card"><div class="ico ico--master"></div><h3>Mastering & QC</h3><p>Multi-aspect deliverables.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Work -->
+<section id="work" class="section">                                                                                  
+  <div class="container">
+    <h2 class="section__title">Selected Work</h2>
+    <div class="tabs">
+      <button class="tab tab--active" data-tab="films">Web/ShortFilms</button>
+      <button class="tab" data-tab="commercial">Reels</button>
+      <button class="tab" data-tab="vfx">Color Grade</button>
+    </div>
+
+    <!-- Web/ShortFilms -->
+    <div id="films" class="grid grid--work is-active">
+      <a class="work" data-video="https://youtu.be/YlrmL46QIlc">
+        <img src="https://img.youtube.com/vi/YlrmL46QIlc/maxresdefault.jpg" alt="YouTube Video 1">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 1</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/2iaPZQ4PBpc">
+        <img src="https://img.youtube.com/vi/2iaPZQ4PBpc/maxresdefault.jpg" alt="YouTube Video 2">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 2</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/xXMKRJzO7w0">
+        <img src="https://img.youtube.com/vi/xXMKRJzO7w0/maxresdefault.jpg" alt="YouTube Video 3">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 3</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/7nOQKRQfj1Q">
+        <img src="https://img.youtube.com/vi/7nOQKRQfj1Q/maxresdefault.jpg" alt="YouTube Video 4">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 4</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/VcW5jwmvQIg">
+        <img src="https://img.youtube.com/vi/VcW5jwmvQIg/maxresdefault.jpg" alt="YouTube Video 5">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 5</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/vZ2zK_Ph4ko">
+        <img src="https://img.youtube.com/vi/vZ2zK_Ph4ko/maxresdefault.jpg" alt="YouTube Video 6">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 6</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/7Qt-0kiBNRM">
+        <img src="https://img.youtube.com/vi/7Qt-0kiBNRM/maxresdefault.jpg" alt="YouTube Video 7">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 7</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/wt4elXQf-Xo">
+        <img src="https://img.youtube.com/vi/wt4elXQf-Xo/hqdefault.jpg" alt="YouTube Video 8">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 8</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/3p18RrZvPnk">
+        <img src="https://img.youtube.com/vi/3p18RrZvPnk/hqdefault.jpg" alt="YouTube Video 9">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 9</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/OfNBT9X8lsk">
+        <img src="https://img.youtube.com/vi/OfNBT9X8lsk/maxresdefault.jpg" alt="YouTube Video 10">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 10</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/fwFO1_yI1ak">
+        <img src="https://img.youtube.com/vi/fwFO1_yI1ak/maxresdefault.jpg" alt="YouTube Video 11">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 11</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/CQ4BzBerhis">
+        <img src="https://img.youtube.com/vi/CQ4BzBerhis/maxresdefault.jpg" alt="YouTube Video 12">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 12</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/CBZwU6j4nSU">
+        <img src="https://img.youtube.com/vi/CBZwU6j4nSU/maxresdefault.jpg" alt="YouTube Video 13">
+        <span class="work__tag">YouTube · ShortFilm</span>
+        <h4 class="work__title">Creative Film 13</h4>
+      </a>
+    </div>
+
+    <!-- Reels -->
+    <div id="commercial" class="grid grid--work">
+      <a href="https://www.instagram.com/reel/DW9F6qrEaRg/?igsh=MXZsbWZpeHl3bm1maw==" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 1">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 1</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DWY79OolBYj/?igsh=MTVzOHVuZzZhamY5Yw==" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 2">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 2</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DWWXOEMEibc/?igsh=NWZuZzBnaTVmMmQ2" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 3">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 3</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DWRNpo7lWcA/?igsh=MWN2b3ltcTY3ZWtmNg==" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 4">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 4</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DVTah2gEyrb/?igsh=MWdqejY5MGhkYjIwdg==" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 5">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 5</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DUYMKfkgGut/?igsh=MWNub2k2N2VuajB4NA==" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 6">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 6</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DT73fSVFJKk/?igsh=Z2N6MmZld3F3aWR2" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 7">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 7</h4>
+      </a>
+      <a href="https://www.instagram.com/reel/DTxkjA-EUCb/?igsh=cHYzMzFzMzQ0NXdw" target="_blank" class="work">
+        <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 8">
+        <span class="work__tag">Instagram · Reel</span>
+        <h4 class="work__title">Instagram Reel 8</h4>
+      </a>
+    </div>
+
+    <!-- Color Grade -->
+    <div id="vfx" class="grid grid--work">
+      <a class="work" data-video="https://youtu.be/G-eLWbILdDA">
+        <img src="https://img.youtube.com/vi/G-eLWbILdDA/maxresdefault.jpg" alt="Color Grade">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase</h4>
+      </a>
+    </div>
+
+
+    <div class="center project-btn"><a href="#contact" class="btn">Start a project</a></div>
+  </div>
+</section>
+
+<!-- Clients -->
+<section id="clients" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Clients</h2>
+    <div class="grid grid--clients">
+      <img src="assets/Vivo-Logo.jpg.jpeg" alt="Vivo Logo">
+      <img src="assets/unnamed.jpg.jpeg" alt="Client">
+      <img src="assets/OPPO_LOGO_2019.svg.png" alt="Oppo Logo">
+      <img src="assets/Logo-CARS24.webp" alt="CARS24 Logo">
+      <img src="assets/Layer_1_955781a1-b95e-4c8a-bed5-111b1a37116e.webp" alt="Client">
+      <img src="assets/images.png" alt="Client">
+      <img src="assets/images.jfif.jpeg" alt="Client">
+      <img src="assets/images (1).png" alt="Client">
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <h2 class="section__title">Testimonials</h2>
+    <div class="quotes">
+      <figure class="quote is-active">
+        <blockquote>He finds the film inside the footage. Calm under deadlines and always delivers options.</blockquote>
+        <figcaption>— Creative Director, Brand X</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Our episodic needed pace and coherence. His edit brought the emotion forward.</blockquote>
+        <figcaption>— Showrunner, Outsider</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Seamless VFX and grade. The product looked premium without losing realism.</blockquote>
+        <figcaption>— Producer, Auto Viz</figcaption>
+      </figure>
+      <div id="quoteDots" class="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section--alt">
+  <div class="container contact">
+    <div class="contact__intro">
+      <h2 class="section__title">Let’s collaborate</h2>
+      <p>Share a brief, references and timeline. I’ll reply with a plan and ballpark within 24 hours.</p>
+      <ul class="contact__list">
+        <li>Email: <a id="emailLink" href="mailto:aman.patratu513@gmail.com">aman.patratu513@gmail.com</a></li>
+        <li>Phone: <a id="phoneLink" href="tel:+918709653370">+91 87096 53370</a></li>
+        <li>Location: Mumbai — Remote-friendly</li>
+      </ul>
+    </div>
+    <form id="contactForm" class="form" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+        <small class="err">Please enter your name</small>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <small class="err">Please enter a valid email</small>
+      </div>
+      <div class="field">
+        <label for="message">Project brief</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <small class="err">Please add a short brief</small>
+      </div>
+      <div class="form__actions">
+        <label class="check"><input id="nda" type="checkbox"> Need NDA</label>
+        <button class="btn" type="submit">Send</button>
+      </div>
+      <p id="formStatus" class="form__status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer__bar">
+    <p>© <span id="year"></span> Showreel Portfolio.</p>
+    <div class="social">
+      <a id="igLink" href="#" aria-label="Instagram">IG</a>
+      <a id="ytLink" href="#" aria-label="YouTube">YT</a>
+      <a id="inLink" href="#" aria-label="LinkedIn">IN</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <button id="lightboxClose" class="lightbox__close" aria-label="Close">×</button>
+  <video id="lightboxVideo" controls playsinline></video>
+</div>
+
+<!-- Floating Play -->
+<button id="floatPlay" class="float" aria-label="Play Reel">▶</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
