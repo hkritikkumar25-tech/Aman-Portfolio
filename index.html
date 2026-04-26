@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Aman Raj Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -55,7 +56,7 @@
       <span class="stat__label">Commercial Spots</span>
     </div>
     <div class="stat">
-      <span class="stat__num" data-count="25">0</span>
+      <span class="stat__num" data-count="25">8</span>
       <span class="stat__label">Brands</span>
     </div>
     <div class="stat">
@@ -63,7 +64,7 @@
       <span class="stat__label">Web/Episodic</span>
     </div>
     <div class="stat">
-      <span class="stat__num" data-count="8">0</span>
+      <span class="stat__num" data-count="8">2</span>
       <span class="stat__label">Years</span>
     </div>
   </div>
@@ -75,9 +76,7 @@
     <h2 class="section__title">Services</h2>
     <div class="cards">
       <article class="card"><div class="ico ico--edit"></div><h3>Offline/Online Editing</h3><p>Story-first cutting for ads and narrative.</p></article>
-      <article class="card"><div class="ico ico--mograph"></div><h3>Motion Graphics</h3><p>Titles, supers and product animations.</p></article>
       <article class="card"><div class="ico ico--sound"></div><h3>Sound Design</h3><p>Edit, design and basic mix.</p></article>
-      <article class="card"><div class="ico ico--vfx"></div><h3>VFX</h3><p>Cleanups, comps and replacements.</p></article>
       <article class="card"><div class="ico ico--color"></div><h3>Color Grading</h3><p>Looks and broadcast safe finish.</p></article>
       <article class="card"><div class="ico ico--master"></div><h3>Mastering & QC</h3><p>Multi-aspect deliverables.</p></article>
     </div>
@@ -89,13 +88,16 @@
   <div class="container">
     <h2 class="section__title">Selected Work</h2>
     <div class="tabs">
-      <button class="tab tab--active" data-tab="films">Web/ShortFilms</button>
-      <button class="tab" data-tab="commercial">Reels</button>
-      <button class="tab" data-tab="vfx">Color Grade</button>
+      <button class="tab tab--active" data-tab="shortfilm">Short Film</button>
+      <button class="tab" data-tab="videos">Videos</button>
+      <button class="tab" data-tab="colorgrade">Color Grade</button>
+      <button class="tab" data-tab="reels">Reels</button>
+      <button class="tab" data-tab="ads">Ads</button>
+      <button class="tab" data-tab="musicvideos">Music Videos</button>
     </div>
 
-    <!-- Web/ShortFilms -->
-    <div id="films" class="grid grid--work is-active">
+    <!-- Short Film -->
+    <div id="shortfilm" class="grid grid--work is-active">
       <a class="work" data-video="https://youtu.be/YlrmL46QIlc">
         <img src="https://img.youtube.com/vi/YlrmL46QIlc/maxresdefault.jpg" alt="YouTube Video 1">
         <span class="work__tag">YouTube · ShortFilm</span>
@@ -126,11 +128,6 @@
         <span class="work__tag">YouTube · ShortFilm</span>
         <h4 class="work__title">Creative Film 6</h4>
       </a>
-      <a class="work" data-video="https://youtu.be/7Qt-0kiBNRM">
-        <img src="https://img.youtube.com/vi/7Qt-0kiBNRM/maxresdefault.jpg" alt="YouTube Video 7">
-        <span class="work__tag">YouTube · ShortFilm</span>
-        <h4 class="work__title">Creative Film 7</h4>
-      </a>
       <a class="work" data-video="https://youtu.be/wt4elXQf-Xo">
         <img src="https://img.youtube.com/vi/wt4elXQf-Xo/hqdefault.jpg" alt="YouTube Video 8">
         <span class="work__tag">YouTube · ShortFilm</span>
@@ -146,25 +143,49 @@
         <span class="work__tag">YouTube · ShortFilm</span>
         <h4 class="work__title">Creative Film 10</h4>
       </a>
-      <a class="work" data-video="https://youtu.be/fwFO1_yI1ak">
-        <img src="https://img.youtube.com/vi/fwFO1_yI1ak/maxresdefault.jpg" alt="YouTube Video 11">
-        <span class="work__tag">YouTube · ShortFilm</span>
-        <h4 class="work__title">Creative Film 11</h4>
-      </a>
       <a class="work" data-video="https://youtu.be/CQ4BzBerhis">
         <img src="https://img.youtube.com/vi/CQ4BzBerhis/maxresdefault.jpg" alt="YouTube Video 12">
         <span class="work__tag">YouTube · ShortFilm</span>
         <h4 class="work__title">Creative Film 12</h4>
       </a>
-      <a class="work" data-video="https://youtu.be/CBZwU6j4nSU">
-        <img src="https://img.youtube.com/vi/CBZwU6j4nSU/maxresdefault.jpg" alt="YouTube Video 13">
-        <span class="work__tag">YouTube · ShortFilm</span>
-        <h4 class="work__title">Creative Film 13</h4>
+    </div>
+
+    <!-- Videos -->
+    <div id="videos" class="grid grid--work">
+      <p class="work-placeholder">More projects coming soon.</p>
+    </div>
+
+    <!-- Color Grade -->
+    <div id="colorgrade" class="grid grid--work">
+      <a class="work" data-video="https://youtu.be/G-eLWbILdDA">
+        <img src="https://img.youtube.com/vi/G-eLWbILdDA/maxresdefault.jpg" alt="Color Grade">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/wt4elXQf-Xo">
+        <img src="https://img.youtube.com/vi/wt4elXQf-Xo/hqdefault.jpg" alt="Color Grading Showcase 1">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase 1</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/3p18RrZvPnk">
+        <img src="https://img.youtube.com/vi/3p18RrZvPnk/hqdefault.jpg" alt="Color Grading Showcase 2">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase 2</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/OfNBT9X8lsk">
+        <img src="https://img.youtube.com/vi/OfNBT9X8lsk/maxresdefault.jpg" alt="Color Grading Showcase 3">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase 3</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/CQ4BzBerhis">
+        <img src="https://img.youtube.com/vi/CQ4BzBerhis/maxresdefault.jpg" alt="Color Grading Showcase 4">
+        <span class="work__tag">Color Grade</span>
+        <h4 class="work__title">Color Grading Showcase 4</h4>
       </a>
     </div>
 
     <!-- Reels -->
-    <div id="commercial" class="grid grid--work">
+    <div id="reels" class="grid grid--work">
       <a href="https://www.instagram.com/reel/DW9F6qrEaRg/?igsh=MXZsbWZpeHl3bm1maw==" target="_blank" class="work">
         <img src="assets/thumbs/reel-thumbnail.jpg" alt="Instagram Reel 1">
         <span class="work__tag">Instagram · Reel</span>
@@ -207,15 +228,39 @@
       </a>
     </div>
 
-    <!-- Color Grade -->
-    <div id="vfx" class="grid grid--work">
-      <a class="work" data-video="https://youtu.be/G-eLWbILdDA">
-        <img src="https://img.youtube.com/vi/G-eLWbILdDA/maxresdefault.jpg" alt="Color Grade">
-        <span class="work__tag">Color Grade</span>
-        <h4 class="work__title">Color Grading Showcase</h4>
-      </a>
+    <!-- Ads -->
+    <div id="ads" class="grid grid--work">
+      <p class="work-placeholder">More projects coming soon.</p>
     </div>
 
+    <!-- Music Videos -->
+    <div id="musicvideos" class="grid grid--work">
+      <a class="work" data-video="https://youtu.be/7Qt-0kiBNRM">
+        <img src="https://img.youtube.com/vi/7Qt-0kiBNRM/maxresdefault.jpg" alt="Music video">
+        <span class="work__tag">YouTube · Music Video</span>
+        <h4 class="work__title">Creative Film 7</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/fwFO1_yI1ak">
+        <img src="https://img.youtube.com/vi/fwFO1_yI1ak/maxresdefault.jpg" alt="Music video">
+        <span class="work__tag">YouTube · Music Video</span>
+        <h4 class="work__title">Creative Film 11</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/CBZwU6j4nSU">
+        <img src="https://img.youtube.com/vi/CBZwU6j4nSU/maxresdefault.jpg" alt="Music video">
+        <span class="work__tag">YouTube · Music Video</span>
+        <h4 class="work__title">Creative Film 13</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/u9ih2F3VA58">
+        <img src="https://img.youtube.com/vi/u9ih2F3VA58/maxresdefault.jpg" alt="Music video">
+        <span class="work__tag">YouTube · Music Video</span>
+        <h4 class="work__title">Music Video</h4>
+      </a>
+      <a class="work" data-video="https://youtu.be/dShzJPLvMII">
+        <img src="https://img.youtube.com/vi/dShzJPLvMII/maxresdefault.jpg" alt="Music video">
+        <span class="work__tag">YouTube · Music Video</span>
+        <h4 class="work__title">Music Video 2</h4>
+      </a>
+    </div>
 
     <div class="center project-btn"><a href="#contact" class="btn">Start a project</a></div>
   </div>

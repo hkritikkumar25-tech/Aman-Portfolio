@@ -1,0 +1,211 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "id": "app_js",
+      "community": 0,
+      "norm_label": "app.js"
+    },
+    {
+      "label": "parseYoutubeVideoId()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L28",
+      "id": "app_parseyoutubevideoid",
+      "community": 1,
+      "norm_label": "parseyoutubevideoid()"
+    },
+    {
+      "label": "openVideo()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L44",
+      "id": "app_openvideo",
+      "community": 1,
+      "norm_label": "openvideo()"
+    },
+    {
+      "label": "closeVideo()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L125",
+      "id": "app_closevideo",
+      "community": 0,
+      "norm_label": "closevideo()"
+    },
+    {
+      "label": "hydrateYoutubeWorkTitles()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L157",
+      "id": "app_hydrateyoutubeworktitles",
+      "community": 0,
+      "norm_label": "hydrateyoutubeworktitles()"
+    },
+    {
+      "label": "inView()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L197",
+      "id": "app_inview",
+      "community": 2,
+      "norm_label": "inview()"
+    },
+    {
+      "label": "startCounters()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L198",
+      "id": "app_startcounters",
+      "community": 2,
+      "norm_label": "startcounters()"
+    },
+    {
+      "label": "showErr()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L251",
+      "id": "app_showerr",
+      "community": 0,
+      "norm_label": "showerr()"
+    },
+    {
+      "label": "applyTheme()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L264",
+      "id": "app_applytheme",
+      "community": 0,
+      "norm_label": "applytheme()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_parseyoutubevideoid",
+      "source": "app_js",
+      "target": "app_parseyoutubevideoid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_openvideo",
+      "source": "app_js",
+      "target": "app_openvideo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_closevideo",
+      "source": "app_js",
+      "target": "app_closevideo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_hydrateyoutubeworktitles",
+      "source": "app_js",
+      "target": "app_hydrateyoutubeworktitles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L197",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_inview",
+      "source": "app_js",
+      "target": "app_inview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_startcounters",
+      "source": "app_js",
+      "target": "app_startcounters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L251",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_showerr",
+      "source": "app_js",
+      "target": "app_showerr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_src": "app_js",
+      "_tgt": "app_applytheme",
+      "source": "app_js",
+      "target": "app_applytheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "app_openvideo",
+      "_tgt": "app_parseyoutubevideoid",
+      "source": "app_parseyoutubevideoid",
+      "target": "app_openvideo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_src": "app_startcounters",
+      "_tgt": "app_inview",
+      "source": "app_inview",
+      "target": "app_startcounters",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

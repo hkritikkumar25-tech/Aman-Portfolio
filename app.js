@@ -25,34 +25,67 @@ const lightbox = document.getElementById('lightbox');
 const lbVideo = document.getElementById('lightboxVideo');
 const lbClose = document.getElementById('lightboxClose');
 
-function openVideo(src){
+function parseYoutubeVideoId(src) {
+  if (!src || typeof src !== 'string') return '';
+  let videoId = '';
+  if (src.includes('youtu.be/')) {
+    videoId = src.split('youtu.be/')[1].split('?')[0].split('#')[0];
+  } else if (src.includes('youtube.com/watch')) {
+    const q = src.includes('?') ? src.split('?')[1] : '';
+    videoId = (new URLSearchParams(q).get('v') || '').split('#')[0];
+  } else if (src.includes('youtube.com/embed/')) {
+    videoId = src.split('youtube.com/embed/')[1].split('?')[0].split('#')[0];
+  } else if (src.includes('youtube.com/shorts/')) {
+    videoId = src.split('youtube.com/shorts/')[1].split('?')[0].split('/')[0].split('#')[0];
+  }
+  return (videoId || '').trim();
+}
+
+function openVideo(src, triggerEl){
 if(!src) return;
 
-// Check if it's a YouTube URL
+// YouTube: in-page embeds often show Error 153 (referrer / player policy). Use poster + open on YouTube instead.
 if(src.includes('youtu.be/') || src.includes('youtube.com/')){
-  // Extract video ID from YouTube URL
-  let videoId = '';
-  if(src.includes('youtu.be/')){
-    videoId = src.split('youtu.be/')[1].split('?')[0];
-  } else if(src.includes('youtube.com/watch')){
-    const urlParams = new URLSearchParams(src.split('?')[1]);
-    videoId = urlParams.get('v');
-  }
-  
+  const videoId = parseYoutubeVideoId(src);
+
   if(videoId){
-    // Create iframe for YouTube embed
-    const iframe = document.createElement('iframe');
-    iframe.width = '100%';
-    iframe.height = '100%';
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    iframe.title = 'YouTube video player';
-    iframe.frameBorder = '0';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    
-    // Replace video element with iframe temporarily
+    const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+    const titleFromCard = triggerEl?.querySelector('.work__title')?.textContent?.trim() || 'YouTube video';
+
+    const panel = document.createElement('div');
+    panel.className = 'lightbox__yt-panel';
+
+    const poster = document.createElement('img');
+    poster.className = 'lightbox__yt-poster';
+    poster.alt = '';
+    poster.decoding = 'async';
+    poster.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    poster.addEventListener('error', () => {
+      poster.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+    }, { once: true });
+
+    const title = document.createElement('p');
+    title.className = 'lightbox__yt-title';
+    title.textContent = titleFromCard;
+
+    const row = document.createElement('div');
+    row.className = 'lightbox__yt-actions';
+
+    const watch = document.createElement('a');
+    watch.className = 'btn lightbox__yt-btn';
+    watch.href = watchUrl;
+    watch.target = '_blank';
+    watch.rel = 'noopener noreferrer';
+    watch.textContent = 'Watch on YouTube';
+
+    const hint = document.createElement('p');
+    hint.className = 'lightbox__yt-hint';
+    hint.textContent = "Opens in a new tab on YouTube's site with the full player.";
+
+    row.append(watch);
+    panel.append(poster, title, row, hint);
     lbVideo.style.display = 'none';
-    lightbox.insertBefore(iframe, lbClose.nextSibling);
+    lightbox.insertBefore(panel, lbClose.nextSibling);
     lightbox.classList.add('show');
     lightbox.setAttribute('aria-hidden','false');
   }
@@ -65,11 +98,11 @@ else if(src.includes('instagram.com/reel/')){
   if(reelId){
     // Create iframe for Instagram embed
     const iframe = document.createElement('iframe');
-    iframe.width = '100%';
-    iframe.height = '100%';
+    iframe.className = 'lightbox__frame';
     iframe.src = `https://www.instagram.com/p/${reelId}/embed/`;
     iframe.title = 'Instagram reel player';
     iframe.frameBorder = '0';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.scrolling = 'no';
     iframe.allowTransparency = true;
     iframe.allowFullscreen = true;
@@ -90,11 +123,8 @@ else if(src.includes('instagram.com/reel/')){
 }
 }
 function closeVideo(){
-// Remove YouTube or Instagram iframe if it exists
-const iframe = lightbox.querySelector('iframe');
-if(iframe) {
-  iframe.remove();
-}
+lightbox.querySelectorAll('.lightbox__yt-panel').forEach(el => el.remove());
+lightbox.querySelectorAll('iframe').forEach(el => el.remove());
 
 // Reset video element
 lbVideo.pause();
@@ -107,9 +137,52 @@ lightbox.classList.remove('show');
 lightbox.setAttribute('aria-hidden','true');
 }
 document.querySelectorAll('.work').forEach(card=>{
-card.addEventListener('click', ()=> openVideo(card.getAttribute('data-video')));
+card.addEventListener('click', (e) => {
+  const v = card.getAttribute('data-video');
+  if (v) {
+    e.preventDefault();
+    openVideo(v, card);
+    return;
+  }
+  const href = card.getAttribute('href');
+  if (href && /instagram\.com\/reel\//i.test(href)) {
+    e.preventDefault();
+    openVideo(href, card);
+  }
+});
 });
 lbClose.addEventListener('click', closeVideo);
+
+/** Resolve card titles from YouTube via noembed (CORS-friendly); see https://noembed.com */
+async function hydrateYoutubeWorkTitles() {
+  const cards = [...document.querySelectorAll('a.work[data-video]')].filter((c) => {
+    const v = c.getAttribute('data-video') || '';
+    return v.includes('youtu.be') || v.includes('youtube.com');
+  });
+  const batchSize = 6;
+  for (let i = 0; i < cards.length; i += batchSize) {
+    const batch = cards.slice(i, i + batchSize);
+    await Promise.all(batch.map(async (card) => {
+      const id = parseYoutubeVideoId(card.getAttribute('data-video'));
+      if (!id) return;
+      const h4 = card.querySelector('.work__title');
+      if (!h4) return;
+      try {
+        const o = `https://noembed.com/embed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}`;
+        const r = await fetch(o);
+        if (!r.ok) return;
+        const data = await r.json();
+        if (data.error || !data.title) return;
+        h4.textContent = data.title;
+      } catch (_) { /* keep static title */ }
+    }));
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => { hydrateYoutubeWorkTitles(); });
+} else {
+  hydrateYoutubeWorkTitles();
+}
 lightbox.addEventListener('click', e => { if(e.target === lightbox) closeVideo(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeVideo(); });
 
